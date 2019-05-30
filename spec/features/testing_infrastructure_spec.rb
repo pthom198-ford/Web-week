@@ -34,6 +34,17 @@ scenario 'can see the names displayed once submitted' do
 end
 end
 
+feature 'Viewing hit points' do
+scenario 'can see the hit points of player 2' do
+  visit('/players')
+  fill_in 'Player One', with: 'Peter'
+  fill_in 'Player Two', with: 'Piers'
+  click_button('Submit')
+  expect(page).to have_text('Hit Points 100')
+end
+end
+
+
 # capybara can do save_and_open_page
 #unit test testing small encapsultated code, just ruby based model
 #test integration and how code interacts
